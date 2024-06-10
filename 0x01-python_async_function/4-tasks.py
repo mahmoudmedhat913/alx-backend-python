@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """module for async"""
 import asyncio
-import typing from List
+from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
