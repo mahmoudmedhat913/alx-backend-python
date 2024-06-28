@@ -21,13 +21,12 @@ class TestGithubOrgClient(unittest.TestCase):
     """testing the test Github Org Client class"""
     @parameterized.expand([
         ("google", {'login': "google"}),
-        ("abc", {'login': "abc"})
+        ("abc", {'login': "abc"}),
     ])
     @patch(
-        "client.get_json"
+        "client.get_json",
     )
-    def test_org(self, org: str, resp: Dict,
-                 mocked_fxn: MagicMock) -> None:
+    def test_org(self, org: str, resp: Dict, mocked_fxn: MagicMock) -> None:
         """test the test org method functionality"""
         mocked_fxn.return_value = MagicMock(return_value=resp)
         gh_org_client = GithubOrgClient(org)
