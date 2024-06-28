@@ -86,7 +86,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
                     break
             return MagicMock(**config)
 
-        cls.get_patcher = patch("requests.get", side_effect=response)
+        cls.get_patcher = patch('requests.get', side_effect=response)
         cls.org_patcher = patch(
             'client.GithubOrgClient.org',
             new_callable=PropertyMock, **{'return_value': cls.org_payload}
