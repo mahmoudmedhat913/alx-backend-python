@@ -48,7 +48,7 @@ class TestGithubOrgClient(unittest.TestCase):
             'return_value': 'https://api.github.com/orgs/google/repos'
         }
         with patch('client.GithubOrgClient._public_repos_url',
-                new_callable=PropertyMock, **propValue) as mockPublicRepo:
+                   new_callable=PropertyMock, **propValue) as mockPublicRepo:
             test = GithubOrgClient('google')
             self.assertEqual(
                 test.public_repos(), ['cpp-netlib', 'dagger', 'dot-net']
