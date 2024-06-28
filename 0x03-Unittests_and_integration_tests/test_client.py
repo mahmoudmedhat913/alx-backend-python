@@ -63,8 +63,6 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_has_license(self, license: Dict,
                          key: str, expected: bool) -> None:
         """test the test has license method functionality"""
-        gh_org_client = GithubOrgClient("google")
-        client_has_licence = gh_org_client.has_license(repo, key)
         self.assertEqual(
             GithubOrgClient.has_license(license, key), expected
         )
