@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""module for testing client module"""
+"""A module for testing the client module"""
 import unittest
 from typing import Dict
 from unittest.mock import (
@@ -135,7 +135,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         }
 
         def get_payload(url):
-            """get pay load function"""
+            """gets payload function by the URL"""
             if url in route_payload:
                 return Mock(**{'json.return_value': route_payload[url]})
             return HTTPError
@@ -144,7 +144,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         cls.get_patcher.start()
 
     def test_public_repos(self) -> None:
-        """test the public_repos method"""
+        """test the test public repos method"""
         self.assertEqual(
             GithubOrgClient("google").public_repos(),
             self.expected_repos,
