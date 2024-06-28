@@ -28,7 +28,7 @@ class TestGithubOrgClient(unittest.TestCase):
     )
     def test_org(self, org: str, resp: Dict,
                  mocked_fxn: MagicMock) -> None:
-        """test the test org method functionality"""
+        """test the test org method functionality if it works"""
         mocked_fxn.return_value = MagicMock(return_value=resp)
         gh_org_client = GithubOrgClient(org)
         self.assertEqual(gh_org_client.org(), resp)
