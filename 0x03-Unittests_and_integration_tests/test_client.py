@@ -122,6 +122,7 @@ class TestGithubOrgClient(unittest.TestCase):
 ])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """perform integeration tests for Github Org Client class"""
+
     @classmethod
     def setUpClass(cls) -> None:
         """sets up class fixtures before running tests"""
