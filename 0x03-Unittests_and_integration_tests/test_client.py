@@ -26,7 +26,7 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos_url(self) -> None:
         """test the test public repos url property"""
         config = {
-            'return_value.repos_url': "https://api.github.com/slam/repos/alx"
+            'return_value.repos_url': 'https://api.github.com/slam/repos/alx'
         }
         with patch('client.GithubOrgClient.org',
                    new_callable=PropertyMock, **config) as mockOrg:
