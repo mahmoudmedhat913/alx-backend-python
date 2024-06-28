@@ -19,6 +19,7 @@ from fixtures import TEST_PAYLOAD
 
 class TestGithubOrgClient(unittest.TestCase):
     """testing the test Github Org Client class"""
+
     @parameterized.expand([
         ("google", {'login': "google"}),
         ("abc", {'login': "abc"})
