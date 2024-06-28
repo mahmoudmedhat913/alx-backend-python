@@ -110,7 +110,7 @@ class TestGithubOrgClient(unittest.TestCase):
         ({'license': {'key': "bsl-1.0"}}, "bsd-3-clause", False),
     ])
     def test_has_license(self, repo: Dict, key: str, expected: bool) -> None:
-        """test the has_license method"""
+        """test the test has license method functionality"""
         gh_org_client = GithubOrgClient("google")
         client_has_licence = gh_org_client.has_license(repo, key)
         self.assertEqual(client_has_licence, expected)
@@ -125,10 +125,10 @@ class TestGithubOrgClient(unittest.TestCase):
     },
 ])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    """perform integeration tests for GithubOrgClient class"""
+    """perform integeration tests for Github Org Client class"""
     @classmethod
     def setUpClass(cls) -> None:
-        """sets up class fixturesbefore runnin tests"""
+        """sets up class fixtures before running tests"""
         route_payload = {
             'https://api.github.com/orgs/google': cls.org_payload,
             'https://api.github.com/orgs/google/repos': cls.repos_payload,
@@ -150,7 +150,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         )
 
     def test_public_repos_with_license(self) -> None:
-        """test the public_repos_with_license method"""
+        """test the public repos with license method"""
         self.assertEqual(
             GithubOrgClient("google").public_repos(license="apache-2.0"),
             self.apache2_repos,
